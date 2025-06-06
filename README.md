@@ -53,17 +53,17 @@ A modern, full-stack todo list application built with **Next.js**, **Supabase**,
 - **Supabase Account** - [Sign up here](https://supabase.com/)
 
 ### 1. Clone the Repository
-\`\`\`bash
+```bash
 git clone https://github.com/yourusername/todomaster.git
 cd todomaster
-\`\`\`
+```
 
 ### 2. Install Dependencies
-\`\`\`bash
+```bash
 npm install
 # or
 yarn install
-\`\`\`
+```
 
 ### 3. Set Up Supabase
 
@@ -81,16 +81,16 @@ yarn install
 
 Create a `.env.local` file in the root directory:
 
-\`\`\`env
+```env
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-\`\`\`
+```
 
 **Example:**
-\`\`\`env
+```env
 NEXT_PUBLIC_SUPABASE_URL=https://xyzcompany.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-\`\`\`
+```
 
 ### 5. Set Up the Database
 
@@ -100,7 +100,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 3. Run the following scripts in order:
 
 **Script 1: Create Tables and Security**
-\`\`\`sql
+```sql
 -- Enable Row Level Security
 ALTER DATABASE postgres SET "app.jwt_secret" TO 'your-jwt-secret';
 
@@ -153,25 +153,25 @@ CREATE TRIGGER update_todos_updated_at
   BEFORE UPDATE ON todos 
   FOR EACH ROW 
   EXECUTE FUNCTION update_updated_at_column();
-\`\`\`
+```
 
 **Script 2: Enable Real-time**
-\`\`\`sql
+```sql
 -- Enable realtime for todos table
 ALTER PUBLICATION supabase_realtime ADD TABLE todos;
 
 -- Grant necessary permissions for realtime
 GRANT SELECT, INSERT, UPDATE, DELETE ON todos TO authenticated;
 GRANT USAGE ON SCHEMA public TO authenticated;
-\`\`\`
+```
 
 ### 6. Run the Development Server
 
-\`\`\`bash
+```bash
 npm run dev
 # or
 yarn dev
-\`\`\`
+```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
@@ -196,7 +196,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 🏗️ Project Structure
 
-\`\`\`
+```
 todomaster/
 ├── app/                          # Next.js App Router
 │   ├── auth/                     # Authentication pages
@@ -234,7 +234,7 @@ todomaster/
 ├── tailwind.config.js            # Tailwind configuration
 ├── next.config.js                # Next.js configuration
 └── README.md                     # This file
-\`\`\`
+```
 
 ## 🔧 Configuration
 
@@ -264,11 +264,11 @@ todomaster/
 ### Deploy to Vercel (Recommended)
 
 1. **Push to GitHub**
-   \`\`\`bash
+   ```bash
    git add .
    git commit -m "Initial commit"
    git push origin main
-   \`\`\`
+   ```
 
 2. **Deploy with Vercel**
    - Go to [vercel.com](https://vercel.com/)
@@ -343,18 +343,18 @@ We welcome contributions! Please follow these steps:
 
 1. **Fork the repository**
 2. **Create a feature branch**
-   \`\`\`bash
+   ```bash
    git checkout -b feature/amazing-feature
-   \`\`\`
+   ```
 3. **Make your changes**
 4. **Commit your changes**
-   \`\`\`bash
+   ```bash
    git commit -m "Add amazing feature"
-   \`\`\`
+   ```
 5. **Push to the branch**
-   \`\`\`bash
+   ```bash
    git push origin feature/amazing-feature
-   \`\`\`
+   ```
 6. **Open a Pull Request**
 
 ### Development Guidelines
@@ -390,7 +390,7 @@ If you encounter any issues or have questions:
 **Built with ❤️ using Next.js and Supabase**
 
 Happy coding! 🚀
-\`\`\`
+```
 
 Perfect! I've successfully converted all TypeScript files to JavaScript and created a comprehensive README.md with detailed setup instructions. Here's what I've accomplished:
 
